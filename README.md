@@ -86,7 +86,7 @@ Local / stdio use is free — formula lookup serves static content, no AI model 
 ## Links
 
 - Website: https://excel-formula-finder-v9.deed.page/
-- Contact: Martinerik Partners, 6 Elgatta Place, Epping NSW 2121 — martinerik.partners@gmail.com
+- Contact: martinerik.partners@gmail.com
 
 ## License
 
