@@ -1,0 +1,240 @@
+[
+  {
+    "name": "SUBTOTAL",
+    "cat": "sum",
+    "ko": "필터·숨긴 행 빼고 합계",
+    "en": "Total that ignores filtered & hidden rows",
+    "vi": "Tính tổng bỏ qua dòng đã lọc & ẩn"
+  },
+  {
+    "name": "AGGREGATE",
+    "cat": "sum",
+    "ko": "오류 있어도 합계·평균 계산",
+    "en": "Sum & average even when errors exist",
+    "vi": "Tính tổng & trung bình dù có lỗi"
+  },
+  {
+    "name": "MAXIFS",
+    "cat": "sum",
+    "ko": "조건별 가장 큰 값",
+    "en": "Largest value by condition",
+    "vi": "Giá trị lớn nhất theo điều kiện"
+  },
+  {
+    "name": "MINIFS",
+    "cat": "sum",
+    "ko": "조건별 가장 작은 값",
+    "en": "Smallest value by condition",
+    "vi": "Giá trị nhỏ nhất theo điều kiện"
+  },
+  {
+    "name": "COUNTIF",
+    "cat": "sum",
+    "ko": "조건 하나 건수 세기",
+    "en": "Count with a single condition",
+    "vi": "Đếm với một điều kiện"
+  },
+  {
+    "name": "COUNTA",
+    "cat": "sum",
+    "ko": "비어 있지 않은 셀 세기",
+    "en": "Count non-empty cells",
+    "vi": "Đếm ô không trống"
+  },
+  {
+    "name": "AVERAGEIF",
+    "cat": "sum",
+    "ko": "조건 하나 평균 구하기",
+    "en": "Average with a single condition",
+    "vi": "Tính trung bình với một điều kiện"
+  },
+  {
+    "name": "SUM",
+    "cat": "sum",
+    "ko": "합계 기본기 · 3D 합계까지",
+    "en": "Sum essentials, incl. 3D sums",
+    "vi": "Tổng cơ bản, gồm tổng 3D"
+  },
+  {
+    "name": "HLOOKUP",
+    "cat": "lookup",
+    "ko": "가로 표에서 값 찾기",
+    "en": "Look up in a horizontal table",
+    "vi": "Tra cứu trong bảng ngang"
+  },
+  {
+    "name": "INDIRECT",
+    "cat": "lookup",
+    "ko": "시트·범위를 글자로 지정",
+    "en": "Point to a sheet or range by text",
+    "vi": "Chỉ tới sheet hoặc phạm vi bằng chữ"
+  },
+  {
+    "name": "OFFSET",
+    "cat": "lookup",
+    "ko": "기준 셀에서 움직인 범위",
+    "en": "A range offset from a base cell",
+    "vi": "Phạm vi lệch đi từ ô gốc"
+  },
+  {
+    "name": "CHOOSE",
+    "cat": "lookup",
+    "ko": "번호로 값·수식 골라 쓰기",
+    "en": "Pick a value or formula by number",
+    "vi": "Chọn giá trị hoặc công thức theo số"
+  },
+  {
+    "name": "XMATCH",
+    "cat": "lookup",
+    "ko": "값이 몇 번째인지 찾기",
+    "en": "Find a value's position",
+    "vi": "Tìm vị trí của một giá trị"
+  },
+  {
+    "name": "FILTER",
+    "cat": "lookup",
+    "ko": "조건에 맞는 행만 뽑기",
+    "en": "Pull only rows that match",
+    "vi": "Chỉ trích những dòng thỏa điều kiện"
+  },
+  {
+    "name": "SORT",
+    "cat": "lookup",
+    "ko": "표 자동 정렬해서 보여주기",
+    "en": "Show a table sorted automatically",
+    "vi": "Hiển thị bảng đã tự động sắp xếp"
+  },
+  {
+    "name": "NETWORKDAYS",
+    "cat": "date",
+    "ko": "주말 뺀 영업일 수 계산",
+    "en": "Count working days, excluding weekends",
+    "vi": "Đếm ngày làm việc, trừ cuối tuần"
+  },
+  {
+    "name": "WORKDAY",
+    "cat": "date",
+    "ko": "영업일 기준 마감일 계산",
+    "en": "Due date by working days",
+    "vi": "Hạn chót theo ngày làm việc"
+  },
+  {
+    "name": "EDATE",
+    "cat": "date",
+    "ko": "몇 개월 뒤 같은 날짜",
+    "en": "Same date, months later",
+    "vi": "Cùng ngày, sau vài tháng"
+  },
+  {
+    "name": "YEARFRAC",
+    "cat": "date",
+    "ko": "기간을 연 단위 비율로",
+    "en": "A period as a fraction of a year",
+    "vi": "Khoảng thời gian theo tỉ lệ năm"
+  },
+  {
+    "name": "TODAY",
+    "cat": "date",
+    "ko": "오늘 날짜 · 연체 자동 표시",
+    "en": "Today's date & auto overdue flags",
+    "vi": "Ngày hôm nay & tự đánh dấu quá hạn"
+  },
+  {
+    "name": "DATEVALUE",
+    "cat": "date",
+    "ko": "텍스트 날짜를 진짜 날짜로",
+    "en": "Turn text dates into real dates",
+    "vi": "Đổi ngày dạng chữ thành ngày thật"
+  },
+  {
+    "name": "AND",
+    "cat": "logic",
+    "ko": "조건 모두 맞을 때만",
+    "en": "Only when all conditions hold",
+    "vi": "Chỉ khi mọi điều kiện đều đúng"
+  },
+  {
+    "name": "OR",
+    "cat": "logic",
+    "ko": "조건 중 하나라도 맞으면",
+    "en": "When any condition holds",
+    "vi": "Khi có bất kỳ điều kiện nào đúng"
+  },
+  {
+    "name": "SWITCH",
+    "cat": "logic",
+    "ko": "값에 따라 결과 바꾸기",
+    "en": "Swap results by value",
+    "vi": "Đổi kết quả theo giá trị"
+  },
+  {
+    "name": "IFNA",
+    "cat": "logic",
+    "ko": "#N/A만 따로 처리하기",
+    "en": "Handle only #N/A errors",
+    "vi": "Chỉ xử lý riêng lỗi #N/A"
+  },
+  {
+    "name": "LET",
+    "cat": "logic",
+    "ko": "긴 수식을 짧고 읽기 쉽게",
+    "en": "Make long formulas short & readable",
+    "vi": "Rút gọn công thức dài, dễ đọc"
+  },
+  {
+    "name": "LAMBDA",
+    "cat": "logic",
+    "ko": "내 수식을 함수로 만들기",
+    "en": "Turn your formula into a function",
+    "vi": "Biến công thức của bạn thành hàm"
+  },
+  {
+    "name": "TEXTJOIN",
+    "cat": "etc",
+    "ko": "여러 셀을 쉼표로 합치기",
+    "en": "Join cells with commas",
+    "vi": "Nối nhiều ô bằng dấu phẩy"
+  },
+  {
+    "name": "CONCAT",
+    "cat": "etc",
+    "ko": "텍스트 이어 붙이기",
+    "en": "Join text together",
+    "vi": "Nối văn bản lại với nhau"
+  },
+  {
+    "name": "LEFT",
+    "cat": "etc",
+    "ko": "왼쪽 글자만 뽑기 (코드 분리)",
+    "en": "Extract left characters (split codes)",
+    "vi": "Trích ký tự bên trái (tách mã)"
+  },
+  {
+    "name": "MID",
+    "cat": "etc",
+    "ko": "가운데 글자 뽑기",
+    "en": "Extract middle characters",
+    "vi": "Trích ký tự ở giữa"
+  },
+  {
+    "name": "LEN",
+    "cat": "etc",
+    "ko": "글자 수 세기 · 자릿수 점검",
+    "en": "Count characters & check lengths",
+    "vi": "Đếm ký tự & kiểm tra độ dài"
+  },
+  {
+    "name": "TRIM",
+    "cat": "etc",
+    "ko": "불필요한 공백 정리",
+    "en": "Clean up extra spaces",
+    "vi": "Dọn khoảng trắng thừa"
+  },
+  {
+    "name": "VALUE",
+    "cat": "etc",
+    "ko": "텍스트 숫자를 숫자로 변환",
+    "en": "Convert text numbers to numbers",
+    "vi": "Đổi số dạng chữ thành số thật"
+  }
+]

@@ -1,0 +1,2628 @@
+[
+  {
+    "id": "sumifs",
+    "name": "SUMIFS",
+    "cat": "sum",
+    "keywords": [
+      "월별 합계",
+      "월별",
+      "합계",
+      "조건별 합계",
+      "조건 합계",
+      "부서별 합계",
+      "기간 합계",
+      "매출 합계",
+      "sumifs",
+      "조건에 맞는 합계",
+      "월 매출",
+      "1월 합계",
+      "특정 월",
+      "기간별",
+      "monthly total",
+      "monthly sum",
+      "sum by condition",
+      "conditional sum",
+      "sum by month",
+      "total by department",
+      "period total",
+      "sales total",
+      "tong theo thang",
+      "tong theo dieu kien",
+      "tong co dieu kien",
+      "tong doanh thu",
+      "tong theo phong ban"
+    ],
+    "langs": {
+      "ko": {
+        "title": "조건에 맞는 것만 합계",
+        "desc": "날짜·부서·구분처럼 조건이 여러 개일 때, 조건에 맞는 금액만 더합니다. 월별 합계의 기본 수식이에요.",
+        "formula": "=SUMIFS(C2:C6, A2:A6, \">=\"&DATE(2026,1,1), A2:A6, \"<\"&DATE(2026,2,1), B2:B6, \"카드매출\")",
+        "explain": "C열 금액 중에서, 날짜가 2026년 1월 안에 있고 구분이 “카드매출”인 행만 골라 더합니다. 월을 바꾸려면 DATE 안의 월 숫자만 바꾸면 돼요.",
+        "breakdown": [
+          [
+            "C2:C6",
+            "더할 금액 범위"
+          ],
+          [
+            "A2:A6 + DATE",
+            "1월 1일 이상, 2월 1일 미만 = 1월 한 달"
+          ],
+          [
+            "B2:B6, \"카드매출\"",
+            "구분이 카드매출인 것만"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "날짜",
+            "구분",
+            "금액"
+          ],
+          "rows": [
+            [
+              "2026-01-05",
+              "카드매출",
+              "1,200,000"
+            ],
+            [
+              "2026-01-12",
+              "현금매출",
+              "450,000"
+            ],
+            [
+              "2026-01-20",
+              "카드매출",
+              "980,000"
+            ],
+            [
+              "2026-02-03",
+              "카드매출",
+              "1,500,000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "2026년 1월 · 카드매출 합계",
+          "result": "2,180,000원",
+          "note": "2월 행과 현금매출 행은 조건에 안 맞아서 자동으로 빠집니다."
+        }
+      },
+      "en": {
+        "title": "Sum only the rows that match",
+        "desc": "When you have several conditions — date, department, type — this adds up only the amounts that match them all. The go-to formula for monthly totals.",
+        "formula": "=SUMIFS(C2:C6, A2:A6, \">=\"&DATE(2026,1,1), A2:A6, \"<\"&DATE(2026,2,1), B2:B6, \"Card sales\")",
+        "explain": "From the amounts in column C, it adds only the rows whose date falls in January 2026 and whose type is “Card sales”. To change the month, just change the month number inside DATE.",
+        "breakdown": [
+          [
+            "C2:C6",
+            "The amounts to add up"
+          ],
+          [
+            "A2:A6 + DATE",
+            "On/after Jan 1 and before Feb 1 = the whole month of January"
+          ],
+          [
+            "B2:B6, \"Card sales\"",
+            "Only rows typed as card sales"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Date",
+            "Type",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "2026-01-05",
+              "Card sales",
+              "1,200,000"
+            ],
+            [
+              "2026-01-12",
+              "Cash sales",
+              "450,000"
+            ],
+            [
+              "2026-01-20",
+              "Card sales",
+              "980,000"
+            ],
+            [
+              "2026-02-03",
+              "Card sales",
+              "1,500,000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Jan 2026 · Card sales total",
+          "result": "2,180,000",
+          "note": "The February row and the cash-sales row don't match the conditions, so they're left out automatically."
+        }
+      },
+      "vi": {
+        "title": "Chỉ cộng những dòng thỏa điều kiện",
+        "desc": "Khi có nhiều điều kiện — ngày, phòng ban, loại — công thức này chỉ cộng những số tiền thỏa tất cả điều kiện. Đây là công thức cơ bản để tính tổng theo tháng.",
+        "formula": "=SUMIFS(C2:C6, A2:A6, \">=\"&DATE(2026,1,1), A2:A6, \"<\"&DATE(2026,2,1), B2:B6, \"Doanh thu thẻ\")",
+        "explain": "Trong cột C, công thức chỉ cộng những dòng có ngày nằm trong tháng 1/2026 và loại là “Doanh thu thẻ”. Muốn đổi tháng, chỉ cần đổi số tháng trong DATE.",
+        "breakdown": [
+          [
+            "C2:C6",
+            "Phạm vi số tiền cần cộng"
+          ],
+          [
+            "A2:A6 + DATE",
+            "Từ 1/1 đến trước 1/2 = trọn tháng 1"
+          ],
+          [
+            "B2:B6, \"Doanh thu thẻ\"",
+            "Chỉ những dòng có loại là doanh thu thẻ"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Ngày",
+            "Loại",
+            "Số tiền"
+          ],
+          "rows": [
+            [
+              "2026-01-05",
+              "Doanh thu thẻ",
+              "1.200.000"
+            ],
+            [
+              "2026-01-12",
+              "Doanh thu tiền mặt",
+              "450.000"
+            ],
+            [
+              "2026-01-20",
+              "Doanh thu thẻ",
+              "980.000"
+            ],
+            [
+              "2026-02-03",
+              "Doanh thu thẻ",
+              "1.500.000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Tháng 1/2026 · Tổng doanh thu thẻ",
+          "result": "2.180.000",
+          "note": "Dòng tháng 2 và dòng doanh thu tiền mặt không thỏa điều kiện nên tự động bị loại ra."
+        }
+      }
+    }
+  },
+  {
+    "id": "sumproduct",
+    "name": "SUMPRODUCT",
+    "cat": "sum",
+    "keywords": [
+      "월별 합계",
+      "sumproduct",
+      "곱하기 합계",
+      "수량 단가",
+      "월별 매출",
+      "조건 곱",
+      "가중 합계",
+      "합계 곱",
+      "monthly total",
+      "multiply then sum",
+      "quantity price",
+      "weighted sum",
+      "tong theo thang",
+      "nhan roi cong",
+      "so luong don gia",
+      "tong co trong so"
+    ],
+    "langs": {
+      "ko": {
+        "title": "월별 합계 · 조건 곱하기 합계",
+        "desc": "SUMIFS가 안 될 때 쓰는 만능 수식. 월별 합계, 수량×단가 총액처럼 곱하고 더하는 계산에 강합니다.",
+        "formula": "=SUMPRODUCT((MONTH(A2:A6)=1)*(B2:B6=\"카드매출\")*C2:C6)",
+        "explain": "조건이 맞으면 1, 아니면 0이 돼서 금액에 곱해집니다. 그래서 1월 카드매출만 남고 나머지는 0이 돼 합계에서 사라져요.",
+        "breakdown": [
+          [
+            "MONTH(A2:A6)=1",
+            "날짜의 월이 1월이면 참"
+          ],
+          [
+            "*C2:C6",
+            "조건을 통과한 행의 금액만 더함"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "날짜",
+            "구분",
+            "금액"
+          ],
+          "rows": [
+            [
+              "2026-01-05",
+              "카드매출",
+              "1,200,000"
+            ],
+            [
+              "2026-01-20",
+              "카드매출",
+              "980,000"
+            ],
+            [
+              "2026-02-03",
+              "카드매출",
+              "1,500,000"
+            ]
+          ],
+          "hl": [
+            0,
+            1
+          ],
+          "resultLabel": "1월 카드매출 (SUMPRODUCT)",
+          "result": "2,180,000원",
+          "note": "구형 엑셀에서도 동작해서, 오래된 파일 작업할 때 특히 유용해요."
+        }
+      },
+      "en": {
+        "title": "Monthly totals · multiply, then sum",
+        "desc": "The all-rounder to use when SUMIFS won't do. Great for monthly totals and multiply-then-add jobs like quantity × unit price.",
+        "formula": "=SUMPRODUCT((MONTH(A2:A6)=1)*(B2:B6=\"Card sales\")*C2:C6)",
+        "explain": "Each condition becomes 1 when true and 0 when false, then multiplies the amount. Only January card sales survive — everything else becomes 0 and drops out of the total.",
+        "breakdown": [
+          [
+            "MONTH(A2:A6)=1",
+            "True when the date's month is January"
+          ],
+          [
+            "*C2:C6",
+            "Adds only the amounts of rows that pass the conditions"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Date",
+            "Type",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "2026-01-05",
+              "Card sales",
+              "1,200,000"
+            ],
+            [
+              "2026-01-20",
+              "Card sales",
+              "980,000"
+            ],
+            [
+              "2026-02-03",
+              "Card sales",
+              "1,500,000"
+            ]
+          ],
+          "hl": [
+            0,
+            1
+          ],
+          "resultLabel": "January card sales (SUMPRODUCT)",
+          "result": "2,180,000",
+          "note": "It works in older Excel versions too, so it's especially handy with legacy files."
+        }
+      },
+      "vi": {
+        "title": "Tổng theo tháng · nhân rồi cộng",
+        "desc": "Công thức đa năng khi SUMIFS không dùng được. Rất mạnh cho tổng theo tháng và các phép tính nhân-rồi-cộng như số lượng × đơn giá.",
+        "formula": "=SUMPRODUCT((MONTH(A2:A6)=1)*(B2:B6=\"Doanh thu thẻ\")*C2:C6)",
+        "explain": "Điều kiện đúng thì thành 1, sai thì thành 0, rồi nhân với số tiền. Nhờ vậy chỉ doanh thu thẻ tháng 1 còn lại, phần còn lại thành 0 và biến mất khỏi tổng.",
+        "breakdown": [
+          [
+            "MONTH(A2:A6)=1",
+            "Đúng khi tháng của ngày là tháng 1"
+          ],
+          [
+            "*C2:C6",
+            "Chỉ cộng số tiền của những dòng đạt điều kiện"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Ngày",
+            "Loại",
+            "Số tiền"
+          ],
+          "rows": [
+            [
+              "2026-01-05",
+              "Doanh thu thẻ",
+              "1.200.000"
+            ],
+            [
+              "2026-01-20",
+              "Doanh thu thẻ",
+              "980.000"
+            ],
+            [
+              "2026-02-03",
+              "Doanh thu thẻ",
+              "1.500.000"
+            ]
+          ],
+          "hl": [
+            0,
+            1
+          ],
+          "resultLabel": "Doanh thu thẻ tháng 1 (SUMPRODUCT)",
+          "result": "2.180.000",
+          "note": "Dùng được cả trên Excel đời cũ, nên rất tiện khi làm việc với file cũ."
+        }
+      }
+    }
+  },
+  {
+    "id": "xlookup",
+    "name": "XLOOKUP",
+    "cat": "lookup",
+    "keywords": [
+      "xlookup",
+      "찾기",
+      "조회",
+      "거래처 찾기",
+      "코드 이름",
+      "vlookup 대체",
+      "품목 단가",
+      "참조",
+      "매칭",
+      "lookup",
+      "find",
+      "search value",
+      "client code",
+      "code to name",
+      "item price",
+      "match",
+      "tra cuu",
+      "tim kiem",
+      "tim khach hang",
+      "ma ra ten",
+      "don gia"
+    ],
+    "langs": {
+      "ko": {
+        "title": "코드 → 이름·단가 바로 찾기",
+        "desc": "VLOOKUP의 최신 버전. 거래처코드나 품목코드로 이름·단가를 가져오고, 못 찾았을 때 문구도 정할 수 있어요.",
+        "formula": "=XLOOKUP(A2, 거래처목록!$A$2:$A$50, 거래처목록!$B$2:$B$50, \"미등록 거래처\")",
+        "explain": "A2의 거래처코드를 목록에서 찾아, 옆 열의 거래처명을 가져옵니다. 없으면 오류 대신 “미등록 거래처”라고 표시돼요.",
+        "breakdown": [
+          [
+            "A2",
+            "찾을 값 (거래처코드)"
+          ],
+          [
+            "거래처목록!A열",
+            "코드가 있는 범위"
+          ],
+          [
+            "거래처목록!B열",
+            "가져올 값 (거래처명)"
+          ],
+          [
+            "\"미등록 거래처\"",
+            "못 찾았을 때 표시할 문구"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "코드",
+            "거래처명",
+            "담당자"
+          ],
+          "rows": [
+            [
+              "C-102",
+              "한빛상사",
+              "김민수"
+            ],
+            [
+              "C-103",
+              "대성유통",
+              "이서연"
+            ],
+            [
+              "C-104",
+              "푸른마트",
+              "박준호"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "C-102를 찾으면",
+          "result": "한빛상사",
+          "note": "Excel 2021 / Microsoft 365에서 사용 가능합니다. 구형 엑셀이면 아래 VLOOKUP을 쓰세요."
+        }
+      },
+      "en": {
+        "title": "Code → name & price, instantly",
+        "desc": "The modern version of VLOOKUP. Pulls a name or price from a client or item code, and lets you choose what shows when nothing is found.",
+        "formula": "=XLOOKUP(A2, Clients!$A$2:$A$50, Clients!$B$2:$B$50, \"Unregistered client\")",
+        "explain": "It looks up the client code in A2 in the list and returns the client name from the next column. If there's no match, it shows “Unregistered client” instead of an error.",
+        "breakdown": [
+          [
+            "A2",
+            "The value to find (client code)"
+          ],
+          [
+            "Clients! column A",
+            "The range holding the codes"
+          ],
+          [
+            "Clients! column B",
+            "The value to return (client name)"
+          ],
+          [
+            "\"Unregistered client\"",
+            "Text to show when not found"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Code",
+            "Client",
+            "Contact"
+          ],
+          "rows": [
+            [
+              "C-102",
+              "Hanbit Trading",
+              "Minsu Kim"
+            ],
+            [
+              "C-103",
+              "Daeseong Distribution",
+              "Seoyeon Lee"
+            ],
+            [
+              "C-104",
+              "Pureun Mart",
+              "Junho Park"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Looking up C-102 gives",
+          "result": "Hanbit Trading",
+          "note": "Available in Excel 2021 / Microsoft 365. On older Excel, use VLOOKUP below instead."
+        }
+      },
+      "vi": {
+        "title": "Từ mã → tên & đơn giá ngay lập tức",
+        "desc": "Phiên bản mới của VLOOKUP. Lấy tên, đơn giá từ mã khách hàng hoặc mã hàng, và cho phép đặt sẵn dòng chữ khi không tìm thấy.",
+        "formula": "=XLOOKUP(A2, DanhSachKH!$A$2:$A$50, DanhSachKH!$B$2:$B$50, \"Khách chưa đăng ký\")",
+        "explain": "Công thức tìm mã khách hàng ở A2 trong danh sách và trả về tên khách hàng ở cột bên cạnh. Nếu không có, sẽ hiện “Khách chưa đăng ký” thay vì báo lỗi.",
+        "breakdown": [
+          [
+            "A2",
+            "Giá trị cần tìm (mã khách hàng)"
+          ],
+          [
+            "DanhSachKH! cột A",
+            "Phạm vi chứa mã"
+          ],
+          [
+            "DanhSachKH! cột B",
+            "Giá trị trả về (tên khách hàng)"
+          ],
+          [
+            "\"Khách chưa đăng ký\"",
+            "Dòng chữ hiện khi không tìm thấy"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Mã",
+            "Khách hàng",
+            "Người phụ trách"
+          ],
+          "rows": [
+            [
+              "C-102",
+              "Hanbit Trading",
+              "Minsu Kim"
+            ],
+            [
+              "C-103",
+              "Daeseong Distribution",
+              "Seoyeon Lee"
+            ],
+            [
+              "C-104",
+              "Pureun Mart",
+              "Junho Park"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Tìm C-102 sẽ được",
+          "result": "Hanbit Trading",
+          "note": "Dùng được trên Excel 2021 / Microsoft 365. Nếu dùng Excel cũ, hãy dùng VLOOKUP bên dưới."
+        }
+      }
+    }
+  },
+  {
+    "id": "vlookup",
+    "name": "VLOOKUP",
+    "cat": "lookup",
+    "keywords": [
+      "vlookup",
+      "브이룩업",
+      "찾기",
+      "조회",
+      "거래처 이름 찾기",
+      "코드",
+      "단가 찾기",
+      "참조",
+      "매칭",
+      "lookup",
+      "find",
+      "search",
+      "client name",
+      "account name",
+      "price lookup",
+      "match",
+      "tra cuu",
+      "tim ten khach hang",
+      "tim don gia",
+      "tham chieu"
+    ],
+    "langs": {
+      "ko": {
+        "title": "표에서 값 찾아오기 (클래식)",
+        "desc": "가장 많이 쓰는 찾기 수식. 코드로 이름, 단가, 계정과목명을 가져올 때 씁니다.",
+        "formula": "=VLOOKUP(A2, $F$2:$H$50, 2, FALSE)",
+        "explain": "A2 값을 F열에서 찾고, 같은 행의 2번째 열 값을 가져옵니다. FALSE는 “정확히 일치하는 것만”이라는 뜻이라 회계에서는 거의 항상 FALSE를 씁니다.",
+        "breakdown": [
+          [
+            "A2",
+            "찾을 값"
+          ],
+          [
+            "$F$2:$H$50",
+            "기준표 (복사해도 안 움직이게 $ 고정)"
+          ],
+          [
+            "2",
+            "기준표에서 2번째 열을 가져와라"
+          ],
+          [
+            "FALSE",
+            "정확히 일치할 때만"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "계정코드",
+            "계정과목",
+            "구분"
+          ],
+          "rows": [
+            [
+              "101",
+              "현금",
+              "자산"
+            ],
+            [
+              "102",
+              "보통예금",
+              "자산"
+            ],
+            [
+              "401",
+              "매출",
+              "수익"
+            ]
+          ],
+          "hl": [
+            2
+          ],
+          "resultLabel": "401을 찾으면",
+          "result": "매출",
+          "note": "찾을 값은 기준표의 맨 왼쪽 열에 있어야 합니다. 그게 불편하면 INDEX+MATCH를 쓰세요."
+        }
+      },
+      "en": {
+        "title": "Look up a value in a table (classic)",
+        "desc": "The most widely used lookup formula. Use it to pull a name, unit price or account title from a code.",
+        "formula": "=VLOOKUP(A2, $F$2:$H$50, 2, FALSE)",
+        "explain": "It finds the A2 value in column F and returns the value from the 2nd column of the same row. FALSE means “exact match only” — in accounting you almost always want FALSE.",
+        "breakdown": [
+          [
+            "A2",
+            "The value to find"
+          ],
+          [
+            "$F$2:$H$50",
+            "The lookup table ($ locks it when copied)"
+          ],
+          [
+            "2",
+            "Return the 2nd column of the table"
+          ],
+          [
+            "FALSE",
+            "Exact match only"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Account code",
+            "Account title",
+            "Type"
+          ],
+          "rows": [
+            [
+              "101",
+              "Cash",
+              "Asset"
+            ],
+            [
+              "102",
+              "Bank deposit",
+              "Asset"
+            ],
+            [
+              "401",
+              "Sales",
+              "Revenue"
+            ]
+          ],
+          "hl": [
+            2
+          ],
+          "resultLabel": "Looking up 401 gives",
+          "result": "Sales",
+          "note": "The value you search for must be in the table's leftmost column. If that's a problem, use INDEX+MATCH."
+        }
+      },
+      "vi": {
+        "title": "Tra giá trị trong bảng (kinh điển)",
+        "desc": "Công thức tra cứu được dùng nhiều nhất. Dùng để lấy tên, đơn giá, tên tài khoản từ một mã.",
+        "formula": "=VLOOKUP(A2, $F$2:$H$50, 2, FALSE)",
+        "explain": "Công thức tìm giá trị A2 trong cột F và lấy giá trị ở cột thứ 2 của cùng dòng. FALSE nghĩa là “chỉ khớp chính xác” — trong kế toán gần như luôn dùng FALSE.",
+        "breakdown": [
+          [
+            "A2",
+            "Giá trị cần tìm"
+          ],
+          [
+            "$F$2:$H$50",
+            "Bảng tra cứu ($ để cố định khi sao chép)"
+          ],
+          [
+            "2",
+            "Lấy cột thứ 2 trong bảng"
+          ],
+          [
+            "FALSE",
+            "Chỉ khi khớp chính xác"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Mã tài khoản",
+            "Tên tài khoản",
+            "Loại"
+          ],
+          "rows": [
+            [
+              "101",
+              "Tiền mặt",
+              "Tài sản"
+            ],
+            [
+              "102",
+              "Tiền gửi ngân hàng",
+              "Tài sản"
+            ],
+            [
+              "401",
+              "Doanh thu",
+              "Thu nhập"
+            ]
+          ],
+          "hl": [
+            2
+          ],
+          "resultLabel": "Tìm 401 sẽ được",
+          "result": "Doanh thu",
+          "note": "Giá trị cần tìm phải nằm ở cột ngoài cùng bên trái của bảng. Nếu bất tiện, hãy dùng INDEX+MATCH."
+        }
+      }
+    }
+  },
+  {
+    "id": "indexmatch",
+    "name": "INDEX + MATCH",
+    "cat": "lookup",
+    "keywords": [
+      "index match",
+      "인덱스 매치",
+      "찾기",
+      "조회",
+      "왼쪽 찾기",
+      "참조",
+      "vlookup 대체",
+      "매칭",
+      "index match",
+      "lookup",
+      "find",
+      "look left",
+      "match",
+      "tra cuu",
+      "tim ben trai",
+      "thay the vlookup"
+    ],
+    "langs": {
+      "ko": {
+        "title": "왼쪽 값도 찾는 참조 수식",
+        "desc": "VLOOKUP과 달리 왼쪽 열 값도 가져올 수 있고, 열을 삽입해도 깨지지 않는 안정적인 조합입니다.",
+        "formula": "=INDEX(B2:B50, MATCH(A2, C2:C50, 0))",
+        "explain": "MATCH가 A2가 C열 몇 번째 행에 있는지 찾고, INDEX가 그 행의 B열 값을 꺼내옵니다. 찾는 열과 가져올 열이 따로 놀 수 있어요.",
+        "breakdown": [
+          [
+            "MATCH(A2, C2:C50, 0)",
+            "A2가 몇 번째 행인지 찾기"
+          ],
+          [
+            "INDEX(B2:B50, …)",
+            "그 행의 B열 값 가져오기"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "담당자",
+            "거래처명",
+            "코드"
+          ],
+          "rows": [
+            [
+              "김민수",
+              "한빛상사",
+              "C-102"
+            ],
+            [
+              "이서연",
+              "대성유통",
+              "C-103"
+            ]
+          ],
+          "hl": [
+            1
+          ],
+          "resultLabel": "C-103으로 담당자를 찾으면",
+          "result": "이서연",
+          "note": "코드가 오른쪽, 담당자가 왼쪽에 있어도 찾을 수 있는 게 VLOOKUP과의 차이예요."
+        }
+      },
+      "en": {
+        "title": "Lookup that can also look left",
+        "desc": "Unlike VLOOKUP, it can return values from a column on the left, and it doesn't break when you insert columns — a stable combination.",
+        "formula": "=INDEX(B2:B50, MATCH(A2, C2:C50, 0))",
+        "explain": "MATCH finds which row A2 sits in within column C, and INDEX pulls the column B value from that row. The search column and the return column can be completely separate.",
+        "breakdown": [
+          [
+            "MATCH(A2, C2:C50, 0)",
+            "Finds which row A2 is in"
+          ],
+          [
+            "INDEX(B2:B50, …)",
+            "Returns the column B value from that row"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Contact",
+            "Client",
+            "Code"
+          ],
+          "rows": [
+            [
+              "Minsu Kim",
+              "Hanbit Trading",
+              "C-102"
+            ],
+            [
+              "Seoyeon Lee",
+              "Daeseong Distribution",
+              "C-103"
+            ]
+          ],
+          "hl": [
+            1
+          ],
+          "resultLabel": "Finding the contact for C-103 gives",
+          "result": "Seoyeon Lee",
+          "note": "That's the difference from VLOOKUP: it works even when the code is on the right and the contact is on the left."
+        }
+      },
+      "vi": {
+        "title": "Tra cứu được cả giá trị bên trái",
+        "desc": "Khác với VLOOKUP, tổ hợp này lấy được giá trị ở cột bên trái và không bị vỡ khi chèn thêm cột — một kết hợp rất ổn định.",
+        "formula": "=INDEX(B2:B50, MATCH(A2, C2:C50, 0))",
+        "explain": "MATCH tìm xem A2 nằm ở dòng thứ mấy trong cột C, rồi INDEX lấy giá trị cột B ở dòng đó. Cột tìm và cột lấy giá trị có thể hoàn toàn tách riêng.",
+        "breakdown": [
+          [
+            "MATCH(A2, C2:C50, 0)",
+            "Tìm A2 nằm ở dòng thứ mấy"
+          ],
+          [
+            "INDEX(B2:B50, …)",
+            "Lấy giá trị cột B của dòng đó"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Người phụ trách",
+            "Khách hàng",
+            "Mã"
+          ],
+          "rows": [
+            [
+              "Minsu Kim",
+              "Hanbit Trading",
+              "C-102"
+            ],
+            [
+              "Seoyeon Lee",
+              "Daeseong Distribution",
+              "C-103"
+            ]
+          ],
+          "hl": [
+            1
+          ],
+          "resultLabel": "Tìm người phụ trách của C-103 sẽ được",
+          "result": "Seoyeon Lee",
+          "note": "Đó là điểm khác VLOOKUP: mã ở bên phải, người phụ trách ở bên trái vẫn tìm được."
+        }
+      }
+    }
+  },
+  {
+    "id": "if",
+    "name": "IF",
+    "cat": "logic",
+    "keywords": [
+      "if",
+      "조건",
+      "이상 이하",
+      "승인 검토",
+      "분기",
+      "판정",
+      "크면",
+      "초과",
+      "미만",
+      "condition",
+      "if then",
+      "approve review",
+      "greater than",
+      "threshold",
+      "dieu kien",
+      "phe duyet xem xet",
+      "lon hon",
+      "nguong"
+    ],
+    "langs": {
+      "ko": {
+        "title": "조건에 따라 다르게 표시",
+        "desc": "“금액이 100만원 이상이면 승인, 아니면 검토”처럼 조건에 따라 결과·문구를 바꿉니다.",
+        "formula": "=IF(C2>=1000000, \"승인\", \"검토\")",
+        "explain": "C2가 100만원 이상이면 “승인”, 아니면 “검토”를 표시합니다. 금액 기준 결재 구분, 연체 여부 표시 등에 매일 쓰는 수식이에요.",
+        "breakdown": [
+          [
+            "C2>=1000000",
+            "조건"
+          ],
+          [
+            "\"승인\"",
+            "조건이 참일 때"
+          ],
+          [
+            "\"검토\"",
+            "조건이 거짓일 때"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "거래처",
+            "금액",
+            "결재구분"
+          ],
+          "rows": [
+            [
+              "한빛상사",
+              "1,200,000",
+              "승인"
+            ],
+            [
+              "대성유통",
+              "450,000",
+              "검토"
+            ],
+            [
+              "푸른마트",
+              "2,300,000",
+              "승인"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "100만원 이상 행",
+          "result": "승인 표시",
+          "note": "조건을 여러 단계로 나누려면 아래 IFS를 쓰세요."
+        }
+      },
+      "en": {
+        "title": "Show different results by condition",
+        "desc": "Changes the result or label by condition — like “Approve if the amount is 1,000,000 or more, otherwise Review”.",
+        "formula": "=IF(C2>=1000000, \"Approve\", \"Review\")",
+        "explain": "If C2 is 1,000,000 or more it shows “Approve”, otherwise “Review”. Used daily for amount-based approval flags and overdue markers.",
+        "breakdown": [
+          [
+            "C2>=1000000",
+            "The condition"
+          ],
+          [
+            "\"Approve\"",
+            "When the condition is true"
+          ],
+          [
+            "\"Review\"",
+            "When the condition is false"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Client",
+            "Amount",
+            "Approval"
+          ],
+          "rows": [
+            [
+              "Hanbit Trading",
+              "1,200,000",
+              "Approve"
+            ],
+            [
+              "Daeseong Distribution",
+              "450,000",
+              "Review"
+            ],
+            [
+              "Pureun Mart",
+              "2,300,000",
+              "Approve"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Rows of 1,000,000 or more",
+          "result": "Marked “Approve”",
+          "note": "For several tiers of conditions, use IFS below instead."
+        }
+      },
+      "vi": {
+        "title": "Hiển thị khác nhau theo điều kiện",
+        "desc": "Đổi kết quả hoặc nhãn theo điều kiện — như “Từ 1.000.000 trở lên thì Phê duyệt, còn lại Xem xét”.",
+        "formula": "=IF(C2>=1000000, \"Phê duyệt\", \"Xem xét\")",
+        "explain": "Nếu C2 từ 1.000.000 trở lên sẽ hiện “Phê duyệt”, ngược lại hiện “Xem xét”. Dùng hằng ngày để phân loại phê duyệt theo số tiền, đánh dấu quá hạn…",
+        "breakdown": [
+          [
+            "C2>=1000000",
+            "Điều kiện"
+          ],
+          [
+            "\"Phê duyệt\"",
+            "Khi điều kiện đúng"
+          ],
+          [
+            "\"Xem xét\"",
+            "Khi điều kiện sai"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Khách hàng",
+            "Số tiền",
+            "Phê duyệt"
+          ],
+          "rows": [
+            [
+              "Hanbit Trading",
+              "1.200.000",
+              "Phê duyệt"
+            ],
+            [
+              "Daeseong Distribution",
+              "450.000",
+              "Xem xét"
+            ],
+            [
+              "Pureun Mart",
+              "2.300.000",
+              "Phê duyệt"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Các dòng từ 1.000.000 trở lên",
+          "result": "Hiện “Phê duyệt”",
+          "note": "Nếu điều kiện có nhiều bậc, hãy dùng IFS bên dưới."
+        }
+      }
+    }
+  },
+  {
+    "id": "ifs",
+    "name": "IFS",
+    "cat": "logic",
+    "keywords": [
+      "ifs",
+      "다중 조건",
+      "등급",
+      "구간",
+      "여러 조건",
+      "단계",
+      "if 중첩",
+      "조건 여러개",
+      "multiple conditions",
+      "grade",
+      "tier",
+      "band",
+      "rating",
+      "nhieu dieu kien",
+      "xep hang",
+      "khoang",
+      "bac"
+    ],
+    "langs": {
+      "ko": {
+        "title": "조건이 여러 단계일 때",
+        "desc": "등급·구간이 여러 개일 때 IF를 겹겹이 쌓지 않고 순서대로 나열하는 수식입니다.",
+        "formula": "=IFS(C2>=5000000,\"A등급\", C2>=1000000,\"B등급\", C2>=0,\"C등급\")",
+        "explain": "위에서부터 조건을 차례로 검사해서, 처음 맞는 구간의 결과를 보여줍니다. 거래처 등급, 할인율 구간 정할 때 딱이에요.",
+        "breakdown": [
+          [
+            "C2>=5000000 → A등급",
+            "큰 조건부터 위에서 검사"
+          ],
+          [
+            "TRUE 대신 마지막 조건",
+            "남은 경우는 마지막 구간으로"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "거래처",
+            "연매출",
+            "등급"
+          ],
+          "rows": [
+            [
+              "한빛상사",
+              "6,200,000",
+              "A등급"
+            ],
+            [
+              "대성유통",
+              "1,800,000",
+              "B등급"
+            ],
+            [
+              "푸른마트",
+              "320,000",
+              "C등급"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "620만원 거래처",
+          "result": "A등급",
+          "note": "큰 금액 조건을 위에 써야 합니다. 순서가 바뀌면 아래 구간이 먼저 걸려요."
+        }
+      },
+      "en": {
+        "title": "When conditions come in tiers",
+        "desc": "For grades and bands with several levels, it lists conditions in order instead of nesting IF inside IF.",
+        "formula": "=IFS(C2>=5000000,\"Grade A\", C2>=1000000,\"Grade B\", C2>=0,\"Grade C\")",
+        "explain": "It checks the conditions from the top and shows the result of the first band that matches. Perfect for client grades and discount tiers.",
+        "breakdown": [
+          [
+            "C2>=5000000 → Grade A",
+            "Checked from the top, biggest condition first"
+          ],
+          [
+            "Last condition catches the rest",
+            "Whatever remains falls into the last band"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Client",
+            "Annual sales",
+            "Grade"
+          ],
+          "rows": [
+            [
+              "Hanbit Trading",
+              "6,200,000",
+              "Grade A"
+            ],
+            [
+              "Daeseong Distribution",
+              "1,800,000",
+              "Grade B"
+            ],
+            [
+              "Pureun Mart",
+              "320,000",
+              "Grade C"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "A client with 6,200,000 in sales",
+          "result": "Grade A",
+          "note": "Put the biggest-amount condition at the top. If the order flips, lower bands get matched first."
+        }
+      },
+      "vi": {
+        "title": "Khi điều kiện có nhiều bậc",
+        "desc": "Khi có nhiều hạng, nhiều khoảng, công thức này liệt kê điều kiện theo thứ tự thay vì lồng nhiều IF vào nhau.",
+        "formula": "=IFS(C2>=5000000,\"Hạng A\", C2>=1000000,\"Hạng B\", C2>=0,\"Hạng C\")",
+        "explain": "Công thức kiểm tra điều kiện từ trên xuống và hiện kết quả của khoảng đầu tiên khớp. Rất hợp để xếp hạng khách hàng, đặt khoảng chiết khấu.",
+        "breakdown": [
+          [
+            "C2>=5000000 → Hạng A",
+            "Kiểm tra từ trên, điều kiện lớn trước"
+          ],
+          [
+            "Điều kiện cuối hứng phần còn lại",
+            "Trường hợp còn lại rơi vào khoảng cuối"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Khách hàng",
+            "Doanh thu năm",
+            "Hạng"
+          ],
+          "rows": [
+            [
+              "Hanbit Trading",
+              "6.200.000",
+              "Hạng A"
+            ],
+            [
+              "Daeseong Distribution",
+              "1.800.000",
+              "Hạng B"
+            ],
+            [
+              "Pureun Mart",
+              "320.000",
+              "Hạng C"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Khách có doanh thu 6.200.000",
+          "result": "Hạng A",
+          "note": "Phải viết điều kiện số tiền lớn ở trên. Nếu đảo thứ tự, khoảng dưới sẽ bị khớp trước."
+        }
+      }
+    }
+  },
+  {
+    "id": "countifs",
+    "name": "COUNTIFS",
+    "cat": "sum",
+    "keywords": [
+      "countifs",
+      "건수",
+      "개수 세기",
+      "몇 건",
+      "조건 개수",
+      "미수 건수",
+      "카운트",
+      "count",
+      "how many",
+      "number of rows",
+      "count by condition",
+      "receivables count",
+      "dem",
+      "so luong",
+      "bao nhieu dong",
+      "cong no chua thu"
+    ],
+    "langs": {
+      "ko": {
+        "title": "조건에 맞는 건수 세기",
+        "desc": "합계가 아니라 “몇 건인지”를 셀 때. 미수금 건수, 특정 부서의 지출 건수 세기에 씁니다.",
+        "formula": "=COUNTIFS(B2:B100, \"미수\", A2:A100, \">=\"&DATE(2026,1,1))",
+        "explain": "상태가 “미수”이고 날짜가 2026년 1월 이후인 행의 개수만 셉니다. SUMIFS의 개수 버전이라고 보면 돼요.",
+        "breakdown": [
+          [
+            "B열, \"미수\"",
+            "상태 조건"
+          ],
+          [
+            "A열, 날짜 조건",
+            "기간 조건"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "날짜",
+            "상태",
+            "금액"
+          ],
+          "rows": [
+            [
+              "2026-01-08",
+              "미수",
+              "300,000"
+            ],
+            [
+              "2026-01-15",
+              "완료",
+              "500,000"
+            ],
+            [
+              "2026-01-22",
+              "미수",
+              "750,000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "1월 미수 건수",
+          "result": "2건",
+          "note": "금액 합계가 필요하면 SUMIFS, 건수만 필요하면 COUNTIFS입니다."
+        }
+      },
+      "en": {
+        "title": "Count rows that match conditions",
+        "desc": "For when you need “how many”, not a total. Count outstanding invoices, or one department's expense entries.",
+        "formula": "=COUNTIFS(B2:B100, \"Outstanding\", A2:A100, \">=\"&DATE(2026,1,1))",
+        "explain": "It counts only rows whose status is “Outstanding” and whose date is in or after January 2026. Think of it as the counting version of SUMIFS.",
+        "breakdown": [
+          [
+            "Column B, \"Outstanding\"",
+            "Status condition"
+          ],
+          [
+            "Column A, date condition",
+            "Period condition"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Date",
+            "Status",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "2026-01-08",
+              "Outstanding",
+              "300,000"
+            ],
+            [
+              "2026-01-15",
+              "Paid",
+              "500,000"
+            ],
+            [
+              "2026-01-22",
+              "Outstanding",
+              "750,000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Outstanding count in January",
+          "result": "2 items",
+          "note": "Use SUMIFS when you need the amount total, COUNTIFS when you only need the count."
+        }
+      },
+      "vi": {
+        "title": "Đếm số dòng thỏa điều kiện",
+        "desc": "Dùng khi cần biết “bao nhiêu dòng” chứ không phải tổng tiền. Đếm số khoản chưa thu, số khoản chi của một phòng ban…",
+        "formula": "=COUNTIFS(B2:B100, \"Chưa thu\", A2:A100, \">=\"&DATE(2026,1,1))",
+        "explain": "Chỉ đếm những dòng có trạng thái “Chưa thu” và ngày từ tháng 1/2026 trở đi. Có thể xem đây là phiên bản đếm của SUMIFS.",
+        "breakdown": [
+          [
+            "Cột B, \"Chưa thu\"",
+            "Điều kiện trạng thái"
+          ],
+          [
+            "Cột A, điều kiện ngày",
+            "Điều kiện thời gian"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Ngày",
+            "Trạng thái",
+            "Số tiền"
+          ],
+          "rows": [
+            [
+              "2026-01-08",
+              "Chưa thu",
+              "300.000"
+            ],
+            [
+              "2026-01-15",
+              "Đã xong",
+              "500.000"
+            ],
+            [
+              "2026-01-22",
+              "Chưa thu",
+              "750.000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Số khoản chưa thu trong tháng 1",
+          "result": "2 khoản",
+          "note": "Cần tổng tiền thì dùng SUMIFS, chỉ cần số lượng thì dùng COUNTIFS."
+        }
+      }
+    }
+  },
+  {
+    "id": "averageifs",
+    "name": "AVERAGEIFS",
+    "cat": "sum",
+    "keywords": [
+      "averageifs",
+      "평균",
+      "조건 평균",
+      "부서별 평균",
+      "평균 금액",
+      "average",
+      "average by condition",
+      "average by department",
+      "trung binh",
+      "trung binh theo dieu kien",
+      "trung binh theo phong ban"
+    ],
+    "langs": {
+      "ko": {
+        "title": "조건별 평균 구하기",
+        "desc": "부서별 평균 지출, 거래처별 평균 결제금액처럼 조건에 맞는 값들의 평균을 냅니다.",
+        "formula": "=AVERAGEIFS(C2:C100, B2:B100, \"영업팀\")",
+        "explain": "B열이 “영업팀”인 행들의 C열 평균을 냅니다. 합계가 아니라 건당 평균이 궁금할 때 쓰는 수식이에요.",
+        "breakdown": [
+          [
+            "C2:C100",
+            "평균 낼 금액"
+          ],
+          [
+            "B2:B100, \"영업팀\"",
+            "조건"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "부서",
+            "항목",
+            "금액"
+          ],
+          "rows": [
+            [
+              "영업팀",
+              "접대비",
+              "180,000"
+            ],
+            [
+              "영업팀",
+              "교통비",
+              "120,000"
+            ],
+            [
+              "관리팀",
+              "소모품비",
+              "60,000"
+            ]
+          ],
+          "hl": [
+            0,
+            1
+          ],
+          "resultLabel": "영업팀 평균 지출",
+          "result": "150,000원",
+          "note": "조건에 맞는 행이 하나도 없으면 #DIV/0! 오류가 나니 IFERROR와 같이 쓰기도 해요."
+        }
+      },
+      "en": {
+        "title": "Average for matching rows only",
+        "desc": "Averages only the values that match a condition — average spend per department, average payment per client, and so on.",
+        "formula": "=AVERAGEIFS(C2:C100, B2:B100, \"Sales team\")",
+        "explain": "It averages column C for the rows where column B is “Sales team”. Use it when you want a per-item average rather than a total.",
+        "breakdown": [
+          [
+            "C2:C100",
+            "The amounts to average"
+          ],
+          [
+            "B2:B100, \"Sales team\"",
+            "The condition"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Department",
+            "Item",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "Sales team",
+              "Entertainment",
+              "180,000"
+            ],
+            [
+              "Sales team",
+              "Transport",
+              "120,000"
+            ],
+            [
+              "Admin team",
+              "Supplies",
+              "60,000"
+            ]
+          ],
+          "hl": [
+            0,
+            1
+          ],
+          "resultLabel": "Sales team average spend",
+          "result": "150,000",
+          "note": "If no row matches, you get a #DIV/0! error — that's why it's often paired with IFERROR."
+        }
+      },
+      "vi": {
+        "title": "Tính trung bình theo điều kiện",
+        "desc": "Chỉ tính trung bình các giá trị thỏa điều kiện — chi trung bình theo phòng ban, thanh toán trung bình theo khách hàng…",
+        "formula": "=AVERAGEIFS(C2:C100, B2:B100, \"Phòng kinh doanh\")",
+        "explain": "Công thức tính trung bình cột C của những dòng mà cột B là “Phòng kinh doanh”. Dùng khi bạn cần mức trung bình mỗi khoản thay vì tổng.",
+        "breakdown": [
+          [
+            "C2:C100",
+            "Số tiền cần tính trung bình"
+          ],
+          [
+            "B2:B100, \"Phòng kinh doanh\"",
+            "Điều kiện"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Phòng ban",
+            "Khoản mục",
+            "Số tiền"
+          ],
+          "rows": [
+            [
+              "Phòng kinh doanh",
+              "Tiếp khách",
+              "180.000"
+            ],
+            [
+              "Phòng kinh doanh",
+              "Đi lại",
+              "120.000"
+            ],
+            [
+              "Phòng hành chính",
+              "Văn phòng phẩm",
+              "60.000"
+            ]
+          ],
+          "hl": [
+            0,
+            1
+          ],
+          "resultLabel": "Chi trung bình của phòng kinh doanh",
+          "result": "150.000",
+          "note": "Nếu không có dòng nào khớp, sẽ báo lỗi #DIV/0! nên thường dùng kèm IFERROR."
+        }
+      }
+    }
+  },
+  {
+    "id": "eomonth",
+    "name": "EOMONTH",
+    "cat": "date",
+    "keywords": [
+      "eomonth",
+      "월말",
+      "말일",
+      "월말 날짜",
+      "결제일",
+      "마감일",
+      "다음달 말",
+      "이번달 마지막",
+      "month end",
+      "end of month",
+      "last day",
+      "payment due",
+      "due date",
+      "ngay cuoi thang",
+      "cuoi thang",
+      "han thanh toan",
+      "ngay chot"
+    ],
+    "langs": {
+      "ko": {
+        "title": "월말 날짜 · 결제일 구하기",
+        "desc": "“이번 달 말일”, “다음 달 말일까지” 같은 날짜를 자동으로 구합니다. 마감일·결제일 계산의 필수 수식이에요.",
+        "formula": "=EOMONTH(A2, 0)",
+        "explain": "A2가 속한 달의 마지막 날을 돌려줍니다. 두 번째 숫자가 0이면 이번 달 말, 1이면 다음 달 말, -1이면 지난달 말이에요.",
+        "breakdown": [
+          [
+            "A2",
+            "기준 날짜"
+          ],
+          [
+            "0",
+            "이번 달 말 (1 = 다음 달 말)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "청구일",
+            "결제기한 (월말)"
+          ],
+          "rows": [
+            [
+              "2026-01-14",
+              "2026-01-31"
+            ],
+            [
+              "2026-02-03",
+              "2026-02-28"
+            ],
+            [
+              "2026-03-19",
+              "2026-03-31"
+            ]
+          ],
+          "hl": [],
+          "resultLabel": "2026-01-14의 월말",
+          "result": "2026-01-31",
+          "note": "“청구월 다음 달 말까지 결제” 조건이면 =EOMONTH(A2, 1) 로 바꾸면 됩니다."
+        }
+      },
+      "en": {
+        "title": "Month-end date · payment due date",
+        "desc": "Automatically finds dates like “the last day of this month” or “by the end of next month”. Essential for closing and due-date calculations.",
+        "formula": "=EOMONTH(A2, 0)",
+        "explain": "It returns the last day of the month A2 falls in. The second number 0 means this month's end, 1 means next month's end, and -1 means last month's end.",
+        "breakdown": [
+          [
+            "A2",
+            "The base date"
+          ],
+          [
+            "0",
+            "End of this month (1 = end of next month)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Invoice date",
+            "Due date (month-end)"
+          ],
+          "rows": [
+            [
+              "2026-01-14",
+              "2026-01-31"
+            ],
+            [
+              "2026-02-03",
+              "2026-02-28"
+            ],
+            [
+              "2026-03-19",
+              "2026-03-31"
+            ]
+          ],
+          "hl": [],
+          "resultLabel": "Month-end for 2026-01-14",
+          "result": "2026-01-31",
+          "note": "For terms like “pay by the end of the month after invoicing”, change it to =EOMONTH(A2, 1)."
+        }
+      },
+      "vi": {
+        "title": "Ngày cuối tháng · hạn thanh toán",
+        "desc": "Tự động tính các ngày như “cuối tháng này”, “đến cuối tháng sau”. Công thức không thể thiếu khi tính ngày chốt sổ và hạn thanh toán.",
+        "formula": "=EOMONTH(A2, 0)",
+        "explain": "Trả về ngày cuối cùng của tháng chứa A2. Số thứ hai là 0 nghĩa là cuối tháng này, 1 là cuối tháng sau, -1 là cuối tháng trước.",
+        "breakdown": [
+          [
+            "A2",
+            "Ngày gốc"
+          ],
+          [
+            "0",
+            "Cuối tháng này (1 = cuối tháng sau)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Ngày xuất hóa đơn",
+            "Hạn thanh toán (cuối tháng)"
+          ],
+          "rows": [
+            [
+              "2026-01-14",
+              "2026-01-31"
+            ],
+            [
+              "2026-02-03",
+              "2026-02-28"
+            ],
+            [
+              "2026-03-19",
+              "2026-03-31"
+            ]
+          ],
+          "hl": [],
+          "resultLabel": "Cuối tháng của 2026-01-14",
+          "result": "2026-01-31",
+          "note": "Với điều kiện “thanh toán đến cuối tháng sau tháng xuất hóa đơn”, hãy đổi thành =EOMONTH(A2, 1)."
+        }
+      }
+    }
+  },
+  {
+    "id": "datedif",
+    "name": "DATEDIF",
+    "cat": "date",
+    "keywords": [
+      "datedif",
+      "날짜 차이",
+      "기간 계산",
+      "근속",
+      "근속연수",
+      "연체일수",
+      "며칠 차이",
+      "날짜 계산",
+      "두 날짜",
+      "date difference",
+      "days between",
+      "tenure",
+      "years of service",
+      "overdue days",
+      "period",
+      "chenh lech ngay",
+      "so ngay",
+      "tham nien",
+      "thoi gian lam viec",
+      "ngay qua han"
+    ],
+    "langs": {
+      "ko": {
+        "title": "날짜 차이 · 근속기간 계산",
+        "desc": "두 날짜 사이가 몇 일·몇 개월·몇 년인지 구합니다. 근속연수, 연체일수, 계약기간 계산에 씁니다.",
+        "formula": "=DATEDIF(A2, B2, \"D\")",
+        "explain": "A2부터 B2까지 며칠 차이인지 셉니다. 마지막 단위를 \"Y\"로 바꾸면 햇수, \"M\"이면 개월 수, \"D\"면 일수가 돼요.",
+        "breakdown": [
+          [
+            "A2, B2",
+            "시작일, 종료일"
+          ],
+          [
+            "\"D\"",
+            "단위: D=일, M=개월, Y=년"
+          ],
+          [
+            "\"YM\"",
+            "년 빼고 남은 개월 (근속 표기용)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "입사일",
+            "기준일",
+            "근속"
+          ],
+          "rows": [
+            [
+              "2021-03-02",
+              "2026-01-21",
+              "4년 10개월"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "근속연수 표기 예시",
+          "result": "4년 10개월",
+          "note": "근속을 “4년 10개월”로 쓰려면 =DATEDIF(A2,B2,\"Y\")&\"년 \"&DATEDIF(A2,B2,\"YM\")&\"개월\" 처럼 이어 붙입니다."
+        }
+      },
+      "en": {
+        "title": "Date difference · length of service",
+        "desc": "Finds how many days, months or years lie between two dates. Used for length of service, overdue days and contract periods.",
+        "formula": "=DATEDIF(A2, B2, \"D\")",
+        "explain": "It counts the days from A2 to B2. Change the last unit to \"Y\" for years, \"M\" for months, or keep \"D\" for days.",
+        "breakdown": [
+          [
+            "A2, B2",
+            "Start date, end date"
+          ],
+          [
+            "\"D\"",
+            "Unit: D = days, M = months, Y = years"
+          ],
+          [
+            "\"YM\"",
+            "Months left after whole years (for service labels)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Start date",
+            "As of",
+            "Service"
+          ],
+          "rows": [
+            [
+              "2021-03-02",
+              "2026-01-21",
+              "4 years 10 months"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Length-of-service label example",
+          "result": "4 years 10 months",
+          "note": "To write service as “4 years 10 months”, join them like =DATEDIF(A2,B2,\"Y\")&\" years \"&DATEDIF(A2,B2,\"YM\")&\" months\"."
+        }
+      },
+      "vi": {
+        "title": "Chênh lệch ngày · tính thâm niên",
+        "desc": "Tính hai ngày cách nhau bao nhiêu ngày, tháng hoặc năm. Dùng cho thâm niên, số ngày quá hạn, thời hạn hợp đồng.",
+        "formula": "=DATEDIF(A2, B2, \"D\")",
+        "explain": "Đếm số ngày từ A2 đến B2. Đổi đơn vị cuối thành \"Y\" để tính năm, \"M\" để tính tháng, \"D\" là số ngày.",
+        "breakdown": [
+          [
+            "A2, B2",
+            "Ngày bắt đầu, ngày kết thúc"
+          ],
+          [
+            "\"D\"",
+            "Đơn vị: D = ngày, M = tháng, Y = năm"
+          ],
+          [
+            "\"YM\"",
+            "Số tháng lẻ sau khi trừ năm (để ghi thâm niên)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Ngày vào làm",
+            "Ngày tính",
+            "Thâm niên"
+          ],
+          "rows": [
+            [
+              "2021-03-02",
+              "2026-01-21",
+              "4 năm 10 tháng"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Ví dụ cách ghi thâm niên",
+          "result": "4 năm 10 tháng",
+          "note": "Muốn ghi thâm niên kiểu “4 năm 10 tháng”, hãy nối như sau: =DATEDIF(A2,B2,\"Y\")&\" năm \"&DATEDIF(A2,B2,\"YM\")&\" tháng\"."
+        }
+      }
+    }
+  },
+  {
+    "id": "text",
+    "name": "TEXT",
+    "cat": "etc",
+    "keywords": [
+      "text",
+      "포맷",
+      "형식",
+      "날짜 형식",
+      "금액 표시",
+      "원 표시",
+      "년월",
+      "표시 형식",
+      "서식",
+      "format",
+      "date format",
+      "number format",
+      "display format",
+      "currency format",
+      "dinh dang",
+      "dinh dang ngay",
+      "dinh dang tien",
+      "hien thi"
+    ],
+    "langs": {
+      "ko": {
+        "title": "날짜·금액 원하는 모양으로",
+        "desc": "날짜를 “2026년 1월”로, 금액을 “1,200,000원”으로 표시 모양을 바꿉니다. 보고서 제목·합치기용이에요.",
+        "formula": "=TEXT(A2, \"yyyy년 m월\") & \" 매출: \" & TEXT(B2, \"#,##0\") & \"원\"",
+        "explain": "A2 날짜를 “2026년 1월” 모양으로, B2 금액을 천 단위 쉼표 모양으로 바꿔 한 문장으로 합칩니다.",
+        "breakdown": [
+          [
+            "\"yyyy년 m월\"",
+            "날짜 표시 모양"
+          ],
+          [
+            "\"#,##0\"",
+            "천 단위 쉼표 + 소수 없음"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "날짜",
+            "금액",
+            "보고서 문구"
+          ],
+          "rows": [
+            [
+              "2026-01-31",
+              "2180000",
+              "2026년 1월 매출: 2,180,000원"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "결과 문구",
+          "result": "2026년 1월 매출: 2,180,000원",
+          "note": "TEXT 결과는 텍스트라서 다시 계산할 수 없어요. 계산용 셀은 그대로 두고, 표시용 셀에만 쓰세요."
+        }
+      },
+      "en": {
+        "title": "Format dates & amounts your way",
+        "desc": "Changes how values look — a date as “January 2026”, an amount as “1,200,000”. Great for report titles and combined labels.",
+        "formula": "=TEXT(A2, \"mmmm yyyy\") & \" sales: \" & TEXT(B2, \"#,##0\")",
+        "explain": "It turns the A2 date into a “January 2026” style label and the B2 amount into a thousands-separated number, then joins them into one sentence.",
+        "breakdown": [
+          [
+            "\"mmmm yyyy\"",
+            "The date display pattern"
+          ],
+          [
+            "\"#,##0\"",
+            "Thousands separators, no decimals"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Date",
+            "Amount",
+            "Report label"
+          ],
+          "rows": [
+            [
+              "2026-01-31",
+              "2180000",
+              "January 2026 sales: 2,180,000"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Resulting label",
+          "result": "January 2026 sales: 2,180,000",
+          "note": "TEXT results are text, so they can't be calculated with again. Keep your calculation cells as they are and use TEXT only for display cells."
+        }
+      },
+      "vi": {
+        "title": "Định dạng ngày · số tiền theo ý muốn",
+        "desc": "Đổi cách hiển thị — ngày thành “Tháng 1/2026”, số tiền thành “1.200.000”. Rất hợp cho tiêu đề báo cáo và ghép chữ.",
+        "formula": "=TEXT(A2, \"\\\"Tháng\\\" m/yyyy\") & \" doanh thu: \" & TEXT(B2, \"#.##0\")",
+        "explain": "Đổi ngày A2 thành dạng “Tháng 1/2026”, số tiền B2 thành dạng có dấu phân cách hàng nghìn, rồi ghép thành một câu.",
+        "breakdown": [
+          [
+            "\"Tháng m/yyyy\"",
+            "Kiểu hiển thị ngày"
+          ],
+          [
+            "\"#.##0\"",
+            "Phân cách hàng nghìn + không có số lẻ"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Ngày",
+            "Số tiền",
+            "Câu báo cáo"
+          ],
+          "rows": [
+            [
+              "2026-01-31",
+              "2180000",
+              "Tháng 1/2026 doanh thu: 2.180.000"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Câu kết quả",
+          "result": "Tháng 1/2026 doanh thu: 2.180.000",
+          "note": "Kết quả của TEXT là văn bản nên không tính toán tiếp được. Hãy giữ nguyên ô dùng để tính, chỉ dùng TEXT cho ô hiển thị."
+        }
+      }
+    }
+  },
+  {
+    "id": "round",
+    "name": "ROUND",
+    "cat": "etc",
+    "keywords": [
+      "round",
+      "반올림",
+      "부가세",
+      "올림",
+      "내림",
+      "소수점",
+      "원단위",
+      "절사",
+      "roundup",
+      "rounding",
+      "vat",
+      "tax",
+      "round up",
+      "round down",
+      "decimals",
+      "lam tron",
+      "thue vat",
+      "gtgt",
+      "lam tron len",
+      "lam tron xuong",
+      "so thap phan"
+    ],
+    "langs": {
+      "ko": {
+        "title": "반올림 · 부가세 계산 정리",
+        "desc": "금액의 소수점·1원 단위를 정리합니다. 부가세, 단가 계산에서 소수점 오류를 없앨 때 필수예요.",
+        "formula": "=ROUND(C2/1.1, 0)",
+        "explain": "부가세 포함 금액(C2)에서 공급가액만 빼낼 때 씁니다. 1.1로 나눈 뒤 소수점 0자리로 반올림해서 1원 단위 오차를 없애요.",
+        "breakdown": [
+          [
+            "C2/1.1",
+            "부가세 포함 → 공급가액"
+          ],
+          [
+            "0",
+            "소수점 0자리까지 (원 단위)"
+          ],
+          [
+            "ROUNDUP / ROUNDDOWN",
+            "올림·내림이 필요하면 함수만 교체"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "합계 (부가세 포함)",
+            "공급가액",
+            "부가세"
+          ],
+          "rows": [
+            [
+              "1,100,000",
+              "1,000,000",
+              "100,000"
+            ],
+            [
+              "550,000",
+              "500,000",
+              "50,000"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "1,100,000원의 공급가액",
+          "result": "1,000,000원",
+          "note": "부가세 셀은 =합계-공급가액 으로 두면 1원 오차가 생기지 않습니다."
+        }
+      },
+      "en": {
+        "title": "Rounding · tidy VAT calculations",
+        "desc": "Cleans up decimals and small-unit leftovers in amounts. Essential for removing decimal errors in VAT and unit-price calculations.",
+        "formula": "=ROUND(C2/1.1, 0)",
+        "explain": "Use it to extract the pre-tax amount from a VAT-inclusive total (C2). Divide by 1.1, then round to 0 decimal places to remove small-unit errors.",
+        "breakdown": [
+          [
+            "C2/1.1",
+            "VAT-inclusive → pre-tax amount"
+          ],
+          [
+            "0",
+            "Round to 0 decimal places (whole units)"
+          ],
+          [
+            "ROUNDUP / ROUNDDOWN",
+            "Swap the function when you need up/down rounding"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Total (incl. VAT)",
+            "Pre-tax amount",
+            "VAT"
+          ],
+          "rows": [
+            [
+              "1,100,000",
+              "1,000,000",
+              "100,000"
+            ],
+            [
+              "550,000",
+              "500,000",
+              "50,000"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Pre-tax amount of 1,100,000",
+          "result": "1,000,000",
+          "note": "Set the VAT cell to =Total − Pre-tax amount and no 1-unit discrepancy will appear."
+        }
+      },
+      "vi": {
+        "title": "Làm tròn · gọn phép tính thuế VAT",
+        "desc": "Xử lý phần lẻ thập phân và đơn vị nhỏ trong số tiền. Không thể thiếu để khử sai số thập phân khi tính thuế VAT và đơn giá.",
+        "formula": "=ROUND(C2/1.1, 0)",
+        "explain": "Dùng để tách giá chưa thuế từ tổng đã gồm VAT (C2). Chia cho 1.1 rồi làm tròn đến 0 chữ số thập phân để khử sai số đơn vị nhỏ.",
+        "breakdown": [
+          [
+            "C2/1.1",
+            "Đã gồm VAT → giá chưa thuế"
+          ],
+          [
+            "0",
+            "Làm tròn đến 0 chữ số thập phân (đơn vị nguyên)"
+          ],
+          [
+            "ROUNDUP / ROUNDDOWN",
+            "Đổi hàm khi cần làm tròn lên/xuống"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Tổng (đã gồm VAT)",
+            "Giá chưa thuế",
+            "Thuế VAT"
+          ],
+          "rows": [
+            [
+              "1.100.000",
+              "1.000.000",
+              "100.000"
+            ],
+            [
+              "550.000",
+              "500.000",
+              "50.000"
+            ]
+          ],
+          "hl": [
+            0
+          ],
+          "resultLabel": "Giá chưa thuế của 1.100.000",
+          "result": "1.000.000",
+          "note": "Đặt ô thuế VAT = Tổng − Giá chưa thuế thì sẽ không phát sinh chênh lệch 1 đơn vị."
+        }
+      }
+    }
+  },
+  {
+    "id": "unique",
+    "name": "UNIQUE",
+    "cat": "etc",
+    "keywords": [
+      "중복 제거",
+      "중복",
+      "unique",
+      "유니크",
+      "목록 뽑기",
+      "중복 삭제",
+      "고유값",
+      "거래처 목록",
+      "remove duplicates",
+      "dedupe",
+      "unique values",
+      "distinct list",
+      "client list",
+      "xoa trung lap",
+      "trung lap",
+      "danh sach duy nhat",
+      "loc trung"
+    ],
+    "langs": {
+      "ko": {
+        "title": "중복 제거 · 거래처 목록 뽑기",
+        "desc": "중복된 거래처·품목을 한 번씩만 뽑아 목록을 만듭니다. 월별 거래처 리스트 정리에 딱이에요.",
+        "formula": "=UNIQUE(B2:B100)",
+        "explain": "B열에서 중복을 빼고 한 번씩만 아래로 쭉 뽑아줍니다. 원본은 그대로 두고, 새 목록이 옆에 생기는 방식이에요.",
+        "breakdown": [
+          [
+            "B2:B100",
+            "중복이 있는 열"
+          ],
+          [
+            "결과는 자동으로 아래로 펼쳐짐",
+            "옆 셀은 비워 두세요"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "원본 거래처",
+            "UNIQUE 결과"
+          ],
+          "rows": [
+            [
+              "한빛상사",
+              "한빛상사"
+            ],
+            [
+              "대성유통",
+              "대성유통"
+            ],
+            [
+              "한빛상사",
+              "푸른마트"
+            ],
+            [
+              "푸른마트",
+              ""
+            ]
+          ],
+          "hl": [],
+          "resultLabel": "중복 1건 제거",
+          "result": "3개 거래처",
+          "note": "Microsoft 365 / 최신 엑셀 전용입니다. 구형 엑셀은 데이터 → 중복된 항목 제거 메뉴를 쓰세요."
+        }
+      },
+      "en": {
+        "title": "Remove duplicates · build a client list",
+        "desc": "Pulls each duplicated client or item just once to build a clean list. Perfect for tidying a monthly client list.",
+        "formula": "=UNIQUE(B2:B100)",
+        "explain": "It removes duplicates from column B and lists each value once, spilling downwards. The original data stays untouched — a new list appears beside it.",
+        "breakdown": [
+          [
+            "B2:B100",
+            "The column with duplicates"
+          ],
+          [
+            "Results spill downwards automatically",
+            "Keep the cells below/beside it empty"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Original clients",
+            "UNIQUE result"
+          ],
+          "rows": [
+            [
+              "Hanbit Trading",
+              "Hanbit Trading"
+            ],
+            [
+              "Daeseong Distribution",
+              "Daeseong Distribution"
+            ],
+            [
+              "Hanbit Trading",
+              "Pureun Mart"
+            ],
+            [
+              "Pureun Mart",
+              ""
+            ]
+          ],
+          "hl": [],
+          "resultLabel": "1 duplicate removed",
+          "result": "3 clients",
+          "note": "Microsoft 365 / latest Excel only. On older Excel, use the Data → Remove Duplicates menu."
+        }
+      },
+      "vi": {
+        "title": "Xóa trùng lặp · lập danh sách khách hàng",
+        "desc": "Trích mỗi khách hàng, mặt hàng trùng lặp đúng một lần để tạo danh sách sạch. Rất hợp để sắp xếp danh sách khách hàng theo tháng.",
+        "formula": "=UNIQUE(B2:B100)",
+        "explain": "Loại bỏ các giá trị trùng trong cột B và liệt kê mỗi giá trị một lần, tự trải xuống dưới. Dữ liệu gốc giữ nguyên — danh sách mới xuất hiện bên cạnh.",
+        "breakdown": [
+          [
+            "B2:B100",
+            "Cột chứa giá trị trùng"
+          ],
+          [
+            "Kết quả tự trải xuống dưới",
+            "Hãy để trống các ô bên dưới/bên cạnh"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Khách hàng gốc",
+            "Kết quả UNIQUE"
+          ],
+          "rows": [
+            [
+              "Hanbit Trading",
+              "Hanbit Trading"
+            ],
+            [
+              "Daeseong Distribution",
+              "Daeseong Distribution"
+            ],
+            [
+              "Hanbit Trading",
+              "Pureun Mart"
+            ],
+            [
+              "Pureun Mart",
+              ""
+            ]
+          ],
+          "hl": [],
+          "resultLabel": "Đã loại 1 mục trùng",
+          "result": "3 khách hàng",
+          "note": "Chỉ có trên Microsoft 365 / Excel bản mới nhất. Excel cũ hãy dùng menu Dữ liệu → Loại bỏ trùng lặp."
+        }
+      }
+    }
+  },
+  {
+    "id": "iferror",
+    "name": "IFERROR",
+    "cat": "logic",
+    "keywords": [
+      "iferror",
+      "오류",
+      "에러",
+      "n/a",
+      "오류 처리",
+      "div0",
+      "깨끗하게",
+      "#n/a 없애기",
+      "error",
+      "handle errors",
+      "hide errors",
+      "clean report",
+      "loi",
+      "xu ly loi",
+      "an loi",
+      "bao cao sach"
+    ],
+    "langs": {
+      "ko": {
+        "title": "오류 대신 깔끔하게 표시",
+        "desc": "#N/A, #DIV/0! 같은 오류를 빈칸이나 0, 안내 문구로 바꿔 보고서를 깔끔하게 만듭니다.",
+        "formula": "=IFERROR(VLOOKUP(A2, $F$2:$H$50, 2, FALSE), \"없음\")",
+        "explain": "VLOOKUP이 값을 못 찾아 오류가 나면, 오류 대신 “없음”이라고 표시합니다. 보고서 공유 전에 꼭 감싸 두는 수식이에요.",
+        "breakdown": [
+          [
+            "VLOOKUP(...)",
+            "원래 수식"
+          ],
+          [
+            "\"없음\"",
+            "오류일 때 보여줄 값 (\"\"면 빈칸, 0이면 0)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "코드",
+            "조회 결과"
+          ],
+          "rows": [
+            [
+              "C-102",
+              "한빛상사"
+            ],
+            [
+              "C-999",
+              "없음"
+            ]
+          ],
+          "hl": [
+            1
+          ],
+          "resultLabel": "없는 코드를 조회하면",
+          "result": "없음 (오류 아님)",
+          "note": "오류를 숨기기만 하니, 진짜 계산 오류까지 숨기지 않도록 주의하세요."
+        }
+      },
+      "en": {
+        "title": "Show something clean instead of errors",
+        "desc": "Turns errors like #N/A and #DIV/0! into a blank, a 0 or a friendly note, so reports look clean.",
+        "formula": "=IFERROR(VLOOKUP(A2, $F$2:$H$50, 2, FALSE), \"Not found\")",
+        "explain": "When VLOOKUP can't find a value and errors, it shows “Not found” instead. It's the formula you wrap around others before sharing a report.",
+        "breakdown": [
+          [
+            "VLOOKUP(...)",
+            "Your original formula"
+          ],
+          [
+            "\"Not found\"",
+            "What to show on error (\"\" for blank, 0 for zero)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Code",
+            "Lookup result"
+          ],
+          "rows": [
+            [
+              "C-102",
+              "Hanbit Trading"
+            ],
+            [
+              "C-999",
+              "Not found"
+            ]
+          ],
+          "hl": [
+            1
+          ],
+          "resultLabel": "Looking up a missing code gives",
+          "result": "“Not found” (not an error)",
+          "note": "It only hides errors — be careful not to hide genuine calculation mistakes too."
+        }
+      },
+      "vi": {
+        "title": "Hiển thị gọn gàng thay vì báo lỗi",
+        "desc": "Biến các lỗi như #N/A, #DIV/0! thành ô trống, số 0 hoặc dòng ghi chú, để báo cáo trông sạch sẽ.",
+        "formula": "=IFERROR(VLOOKUP(A2, $F$2:$H$50, 2, FALSE), \"Không có\")",
+        "explain": "Khi VLOOKUP không tìm thấy giá trị và báo lỗi, công thức sẽ hiện “Không có” thay thế. Đây là công thức nên bọc ngoài trước khi chia sẻ báo cáo.",
+        "breakdown": [
+          [
+            "VLOOKUP(...)",
+            "Công thức gốc của bạn"
+          ],
+          [
+            "\"Không có\"",
+            "Giá trị hiện khi có lỗi (\"\" là ô trống, 0 là số 0)"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Mã",
+            "Kết quả tra cứu"
+          ],
+          "rows": [
+            [
+              "C-102",
+              "Hanbit Trading"
+            ],
+            [
+              "C-999",
+              "Không có"
+            ]
+          ],
+          "hl": [
+            1
+          ],
+          "resultLabel": "Tra mã không tồn tại sẽ hiện",
+          "result": "“Không có” (không phải lỗi)",
+          "note": "Công thức chỉ ẩn lỗi đi — hãy cẩn thận đừng ẩn cả lỗi tính toán thật."
+        }
+      }
+    }
+  },
+  {
+    "id": "sumif",
+    "name": "SUMIF",
+    "cat": "sum",
+    "keywords": [
+      "sumif",
+      "합계",
+      "조건 합계",
+      "하나 조건",
+      "부서 합계",
+      "구분 합계",
+      "sum one condition",
+      "sum by department",
+      "quick sum",
+      "tong mot dieu kien",
+      "tong theo phong ban",
+      "tong nhanh"
+    ],
+    "langs": {
+      "ko": {
+        "title": "조건 하나일 때 빠른 합계",
+        "desc": "조건이 하나뿐이면 SUMIFS보다 짧게 쓸 수 있는 합계 수식입니다.",
+        "formula": "=SUMIF(B2:B100, \"영업팀\", C2:C100)",
+        "explain": "B열이 “영업팀”인 행의 C열 금액만 더합니다. 조건이 2개 이상으로 늘어나면 SUMIFS로 바꾸면 돼요.",
+        "breakdown": [
+          [
+            "B2:B100, \"영업팀\"",
+            "조건 범위와 조건"
+          ],
+          [
+            "C2:C100",
+            "더할 금액"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "부서",
+            "항목",
+            "금액"
+          ],
+          "rows": [
+            [
+              "영업팀",
+              "접대비",
+              "180,000"
+            ],
+            [
+              "관리팀",
+              "소모품비",
+              "60,000"
+            ],
+            [
+              "영업팀",
+              "교통비",
+              "120,000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "영업팀 지출 합계",
+          "result": "300,000원",
+          "note": "조건이 날짜까지 겹치면 SUMIF가 아니라 SUMIFS를 쓰세요."
+        }
+      },
+      "en": {
+        "title": "Quick sum with a single condition",
+        "desc": "When there's only one condition, this sums more shortly than SUMIFS.",
+        "formula": "=SUMIF(B2:B100, \"Sales team\", C2:C100)",
+        "explain": "It adds column C only for rows where column B is “Sales team”. Once you have two or more conditions, switch to SUMIFS.",
+        "breakdown": [
+          [
+            "B2:B100, \"Sales team\"",
+            "Condition range and condition"
+          ],
+          [
+            "C2:C100",
+            "The amounts to add"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Department",
+            "Item",
+            "Amount"
+          ],
+          "rows": [
+            [
+              "Sales team",
+              "Entertainment",
+              "180,000"
+            ],
+            [
+              "Admin team",
+              "Supplies",
+              "60,000"
+            ],
+            [
+              "Sales team",
+              "Transport",
+              "120,000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Sales team total spend",
+          "result": "300,000",
+          "note": "If a date condition joins in too, use SUMIFS instead of SUMIF."
+        }
+      },
+      "vi": {
+        "title": "Tính tổng nhanh với một điều kiện",
+        "desc": "Khi chỉ có một điều kiện, công thức này viết ngắn hơn SUMIFS.",
+        "formula": "=SUMIF(B2:B100, \"Phòng kinh doanh\", C2:C100)",
+        "explain": "Chỉ cộng cột C của những dòng mà cột B là “Phòng kinh doanh”. Khi có từ hai điều kiện trở lên, hãy chuyển sang SUMIFS.",
+        "breakdown": [
+          [
+            "B2:B100, \"Phòng kinh doanh\"",
+            "Phạm vi điều kiện và điều kiện"
+          ],
+          [
+            "C2:C100",
+            "Số tiền cần cộng"
+          ]
+        ],
+        "example": {
+          "headers": [
+            "Phòng ban",
+            "Khoản mục",
+            "Số tiền"
+          ],
+          "rows": [
+            [
+              "Phòng kinh doanh",
+              "Tiếp khách",
+              "180.000"
+            ],
+            [
+              "Phòng hành chính",
+              "Văn phòng phẩm",
+              "60.000"
+            ],
+            [
+              "Phòng kinh doanh",
+              "Đi lại",
+              "120.000"
+            ]
+          ],
+          "hl": [
+            0,
+            2
+          ],
+          "resultLabel": "Tổng chi phòng kinh doanh",
+          "result": "300.000",
+          "note": "Nếu thêm cả điều kiện ngày, hãy dùng SUMIFS thay vì SUMIF."
+        }
+      }
+    }
+  }
+]
